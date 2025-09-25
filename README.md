@@ -6,3 +6,6 @@ This file of for handling user login and registering andalso forgot password any
 
 # Posts.c
 This file is for managing and handling the post system. Currently just adding the image path to the linked list is implemeted what is next is to link the front.c file and this file so user can login to their account and make posts. 
+
+# Overall.c
+This file has overall operations of our project all logic are wriiten in c along with proper data structure
