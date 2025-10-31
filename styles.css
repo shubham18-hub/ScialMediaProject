@@ -1,0 +1,67 @@
+/* Basic app styling */
+*{box-sizing:border-box}
+:root{
+  --bg:#f7f8fb;
+  --text:#16181d;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --border:#e5e7eb;
+  --accent:#2563eb;
+  --accent-2:#1e40af;
+  --warn:#f59e0b;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);line-height:1.5}
+
+.container{max-width:1100px;margin:2rem auto;padding:0 1rem}
+h1{margin:0 0 1rem;font-size:1.75rem}
+
+.hidden{display:none}
+.muted{color:var(--muted)}
+
+/* Top nav */
+.nav{display:flex;gap:.5rem;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.5rem .5rem;margin-bottom:1rem}
+.nav .spacer{flex:1}
+.nav-btn{background:transparent;color:var(--text);border:1px solid var(--border);}
+.nav-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.me{font-weight:600}
+
+/* Layout */
+.row{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.5rem}
+@media (max-width: 800px){.row{grid-template-columns:1fr}}
+
+/* Card-like sections */
+.row>div, #auth, .view, .profile-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+
+/* Inputs */
+input,textarea{width:100%;padding:.6rem .7rem;margin:.25rem 0 .85rem;border:1px solid var(--border);border-radius:10px;background:#fff;color:inherit;outline:none;transition:border-color .15s, box-shadow .15s}
+input:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.15)}
+textarea{min-height:90px;resize:vertical}
+
+/* Buttons */
+button{padding:.6rem 1rem;border:0;background:var(--accent);color:#fff;border-radius:10px;cursor:pointer;font-weight:600;transition:background .15s, transform .02s}
+button:hover{background:var(--accent-2)}
+button:active{transform:translateY(1px)}
+button:disabled{opacity:.6;cursor:not-allowed}
+
+/* Lists */
+ul{list-style:none;padding:0;margin:0}
+li{padding:.75rem;border:1px solid var(--border);border-radius:10px;margin:.5rem 0;background:#fff}
+
+/* Composer */
+.composer{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem}
+
+/* Media previews */
+.media{margin-top:.5rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.media img{max-width:220px;border-radius:10px;border:1px solid var(--border)}
+.media video{max-width:280px;border-radius:10px;border:1px solid var(--border)}
+
+/* Priority highlight */
+.priority{border-color:#f5c542;background:#fff9e5;box-shadow:inset 3px 0 0 #f5c542}
+
+/* Small, helper text */
+small{color:var(--muted)}
+
+/* Messages */
+.msg{margin-top:.5rem;color:#991b1b;background:#fee2e2;border:1px solid #fecaca;padding:.5rem .75rem;border-radius:8px}

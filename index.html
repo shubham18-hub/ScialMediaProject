@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Priority Social Media</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Priority Social Media</h1>
+      <div id="auth">
+        <h2>Register</h2>
+        <input id="reg-username" placeholder="Username" />
+        <input id="reg-password" type="password" placeholder="Password" />
+        <button id="btn-register">Register</button>
+        <h2>Login</h2>
+        <input id="login-username" placeholder="Username" />
+        <input id="login-password" type="password" placeholder="Password" />
+        <button id="btn-login">Login</button>
+        <div id="auth-msg" class="msg"></div>
+      </div>
+
+      <div id="app" class="hidden">
+        <div class="nav">
+          <button data-view="feed" class="nav-btn active">Feed</button>
+          <button data-view="explore" class="nav-btn">Explore</button>
+          <button data-view="messages" class="nav-btn">Messages</button>
+          <button data-view="notifications" class="nav-btn">Notifications</button>
+          <button data-view="profile" class="nav-btn">Profile</button>
+          <span class="spacer"></span>
+          <span class="me">@<span id="me-name"></span> (id=<span id="me-id"></span>)</span>
+          <button id="btn-logout">Logout</button>
+        </div>
+
+        <section id="view-feed" class="view">
+          <div class="composer">
+            <textarea id="post-content" placeholder="What's on your mind?"></textarea>
+            <input id="post-files" type="file" multiple accept="image/*,video/*,.pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.txt" />
+            <button id="btn-post">Post</button>
+          </div>
+          <ul id="feed"></ul>
+        </section>
+
+        <section id="view-explore" class="view hidden">
+          <div>
+            <h3>Search Users</h3>
+            <input id="search-q" placeholder="Search..." />
+            <button id="btn-search">Search</button>
+            <ul id="search-results"></ul>
+          </div>
+        </section>
+
+        <section id="view-messages" class="view hidden">
+          <div class="composer">
+            <input id="msg-to" placeholder="Receiver ID" />
+            <input id="msg-content" placeholder="Message" />
+            <input id="msg-files" type="file" multiple accept="image/*,video/*,.pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.txt" />
+            <button id="btn-send-msg">Send</button>
+          </div>
+          <ul id="messages"></ul>
+        </section>
+
+        <section id="view-notifications" class="view hidden">
+          <ul id="notifications"></ul>
+        </section>
+
+        <section id="view-profile" class="view hidden">
+          <div class="profile-card">
+            <h2>@<span id="p-username"></span></h2>
+            <div class="muted">ID: <span id="p-id"></span> · Joined <span id="p-joined"></span></div>
+            <div class="stats">
+              <span><strong id="p-followers">0</strong> Followers</span>
+              <span><strong id="p-following">0</strong> Following</span>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <h3>My Posts</h3>
+              <ul id="p-posts"></ul>
+            </div>
+            <div>
+              <h3>Following</h3>
+              <ul id="p-following-list"></ul>
+              <h3>Followers</h3>
+              <ul id="p-followers-list"></ul>
+              <h3>Close Friends</h3>
+              <ul id="p-cf-list"></ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
